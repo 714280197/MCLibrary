@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //网络请求 retrofit+okhttp+gson
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.squareup.okio:okio:1.11.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    //Diaog样式http://www.jcodecraeer.com/a/opensource/2016/0328/4090.html
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    //图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //design
+    //noinspection GradleCompatible
+    compile 'com.android.support:design:26.0.0-alpha1'
+    //二维码
+    compile 'com.google.zxing:core:3.2.1'
+    //Json数据解析
+    compile 'com.google.code.gson:gson:2.8.0'
+    //适配html代码
+    compile 'org.jsoup:jsoup:1.10.1'
+    //图片选择器
+    compile 'com.lzy.widget:imagepicker:0.5.5'
+    //事件分发
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //Banner
+    compile 'com.youth.banner:banner:1.4.8'
+    //Xrecycler列表
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    //圆形头像
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //城市、时间等选择器
+    compile 'com.contrarywind:Android-PickerView:3.2.5'
+    //滚轮选择器
+    compile 'com.f1reking.library:wheelview:1.1'
+    //控件阴影
+    //noinspection GradleCompatible
+    compile 'com.android.support:cardview-v7:23.2.0'
+    //多界面交互http://www.apkbus.com/thread-566343-1-1.html
+    compile 'com.github.woxingxiao:SlidingUpPanelLayout:1.1.0'
+}
+repositories {
+    mavenCentral()
+    maven {
+        url "https://www.jitpack.io"
+    }
+}

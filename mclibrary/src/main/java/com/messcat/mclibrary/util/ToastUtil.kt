@@ -1,0 +1,21 @@
+@file:JvmName("ToastUtil")
+@file:JvmMultifileClass
+
+package com.messcat.kotlin.utils
+
+import android.content.Context
+import android.widget.Toast
+
+/**
+ * Toast
+ * Created by Administrator on 2017/8/23 0023.
+ */
+/**
+ * Toast短
+ */
+fun toast(msg: String?, context: Context?) = Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+
+/**
+ * Toast长
+ */
+fun long_toast(msg: String?, context: Context?) = Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
